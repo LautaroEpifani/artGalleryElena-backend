@@ -1,7 +1,7 @@
-import express from 'express';
-import cors from 'cors';
-import paymentRoutes from './routes/paymentRoute';
-import 'dotenv/config';
+import express from "express";
+import cors from "cors";
+import paymentRoutes from "./routes/paymentRoute";
+import "dotenv/config";
 
 const app = express();
 const port = process.env.PORT;
@@ -11,7 +11,7 @@ app.use(cors());
 
 // Rutas
 app.get("/", (req, res) => {
-    const htmlResponse = `
+  const htmlResponse = `
       <html>
         <head>
           <title>NodeJs y Express en Vercel</title>
@@ -21,12 +21,12 @@ app.get("/", (req, res) => {
         </body>
       </html>
     `;
-    res.send(htmlResponse);
-  });
-app.use('/api/payments', paymentRoutes);
+  res.send(htmlResponse);
+});
+app.use("/api/payments", paymentRoutes);
 
-app.options('*', cors());
+app.options("*", cors());
 
 app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
+  console.log(`Servidor corriendo en http://localhost:${port}`);
 });

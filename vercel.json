@@ -1,5 +1,12 @@
 {
     "version": 2,
     "builds": [{"src": "./src/app.ts", "use":"@vercel/node"}],
-    "routes": [{"src": "/(.*)", "dest": "/"}]
-}
+    "routes": [
+      {
+        "src": "/api/payments/create-checkout-session",
+        "methods": ["POST"],
+        "dest": "./src/routes/paymentRoute.ts"
+      }
+    ]
+  }
+  
