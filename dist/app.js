@@ -25,8 +25,8 @@ app.get("/", (req, res) => {
     `;
     res.send(htmlResponse);
 });
-app.use('/api/payments', paymentRoute_1.default);
-app.options('*', (0, cors_1.default)());
+app.use("/api/payments", paymentRoute_1.default);
+app.options("*", (0, cors_1.default)());
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
 });
