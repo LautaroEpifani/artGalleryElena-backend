@@ -8,3 +8,4 @@ const paymentController_1 = require("../controllers/paymentController"); // Aseg
 const router = express_1.default.Router();
 router.post('/create-checkout-session', paymentController_1.createCheckoutSession);
 exports.default = router;
+//# sourceMappingURL=paymentRoute.js.map

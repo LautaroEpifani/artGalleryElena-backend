@@ -30,3 +30,4 @@ app.options("*", (0, cors_1.default)());
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
 });
+//# sourceMappingURL=index.js.map
