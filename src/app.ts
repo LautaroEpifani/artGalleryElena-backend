@@ -4,7 +4,7 @@ import paymentRoutes from './routes/paymentRoute';
 import 'dotenv/config';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 app.use(express.json()); // Middleware para parsear JSON
 app.use(cors());
@@ -15,5 +15,5 @@ app.use('/api/payments', paymentRoutes);
 app.options('*', cors());
 
 app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${process.env.PORT}`);
+    console.log(`Servidor corriendo en http://localhost:${port}`);
 });

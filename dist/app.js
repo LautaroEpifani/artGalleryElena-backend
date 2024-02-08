@@ -4,11 +4,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
+const paymentRoute_1 = __importDefault(require("./routes/paymentRoute"));
+require("dotenv/config");
 const app = (0, express_1.default)();
-const port = 3000;
-app.get('/', (req, res) => {
-    res.send('Hola Mundo con Express y TypeScript!');
-});
+const port = process.env.PORT;
+app.use(express_1.default.json()); // Middleware para parsear JSON
+app.use((0, cors_1.default)());
+// Rutas
+app.use('/api/payments', paymentRoute_1.default);
+app.options('*', (0, cors_1.default)());
 app.listen(port, () => {
-    console.log(`La aplicación está escuchando en http://localhost:${port}`);
+    console.log(`Servidor corriendo en http://localhost:${port}`);
 });
