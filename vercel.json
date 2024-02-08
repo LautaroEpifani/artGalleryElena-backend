@@ -1,12 +1,16 @@
 {
-    "version": 2,
-    "builds": [{"src": "./index.ts", "use":"@vercel/node"}],
-    "routes": [
-      {
-        "src": "/api/payments/create-checkout-session",
-        "methods": ["POST"],
-        "dest": "./src/routes/paymentRoute.ts"
-      }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    {
+      "src": ".dist/index.ts",
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["dist/**"] }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "./dist/index.js"
+    }
+  ]
+}
