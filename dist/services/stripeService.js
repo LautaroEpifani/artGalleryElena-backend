@@ -23,8 +23,8 @@ const createSession = (lineItems) => __awaiter(void 0, void 0, void 0, function*
             quantity: item.quantity,
         })),
         mode: 'payment',
-        success_url: 'http://localhost:5173/success',
-        cancel_url: 'http://localhost:5173/cancel',
+        success_url: 'https://artgalleryelena.vercel.app/success',
+        cancel_url: 'https://artgalleryelena.vercel.app/cancel',
     });
     return session;
 });
